@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Venue finder</title>
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+    <script src="javascripts/jquery-1.10.2.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+</head>
+<body>
+<header>
+    <div class="navbar navbar-default navbar-fixed-top text-uppercase">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">Venue finder</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid body-content span=8 offset=2">
+    <div class="well">
+        <form class="form-inline" th:action="@{/}" method="POST" xmlns:th="http://www.w3.org/1999/xhtml">
+            <fieldset>
+
+                <div class="form-group">
+                    <div class="col-sm-2 ">
+                        <input type="date" class="form-control" name="dateString"
+                               placeholder="Date" th:value="${dateString}"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2 ">
+                        <select class="form-control" name="startHourString">
+                            <option value="0" th:selected="${startHourString.equals('0')}">00:00</option>
+                            <option value="1" th:selected="${startHourString.equals('1')}">01:00</option>
+                            <option value="2" th:selected="${startHourString.equals('2')}">02:00</option>
+                            <option value="3" th:selected="${startHourString.equals('3')}">03:00</option>
+                            <option value="4" th:selected="${startHourString.equals('4')}">04:00</option>
+                            <option value="5" th:selected="${startHourString.equals('5')}">05:00</option>
+                            <option value="6" th:selected="${startHourString.equals('6')}">06:00</option>
+                            <option value="7" th:selected="${startHourString.equals('7')}">07:00</option>
+                            <option value="8" th:selected="${startHourString.equals('8')}">08:00</option>
+                            <option value="9" th:selected="${startHourString.equals('9')}">09:00</option>
+                            <option value="10" th:selected="${startHourString.equals('10')}">10:00</option>
+                            <option value="11" th:selected="${startHourString.equals('11')}">11:00</option>
+                            <option value="12" th:selected="${startHourString.equals('12')}">12:00</option>
+                            <option value="13" th:selected="${startHourString.equals('13')}">13:00</option>
+                            <option value="14" th:selected="${startHourString.equals('14')}">14:00</option>
+                            <option value="15" th:selected="${startHourString.equals('15')}">15:00</option>
+                            <option value="16" th:selected="${startHourString.equals('16')}">16:00</option>
+                            <option value="17" th:selected="${startHourString.equals('17')}">17:00</option>
+                            <option value="18" th:selected="${startHourString.equals('18')}">18:00</option>
+                            <option value="19" th:selected="${startHourString.equals('19')}">19:00</option>
+                            <option value="20" th:selected="${startHourString.equals('20')}">20:00</option>
+                            <option value="21" th:selected="${startHourString.equals('21')}">21:00</option>
+                            <option value="22" th:selected="${startHourString.equals('22')}">22:00</option>
+                            <option value="23" th:selected="${startHourString.equals('23')}">23:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2 ">
+                        <select class="form-control" name="endHourString">
+                            <option value="1" th:selected="${endHourString.equals('1')}">01:00</option>
+                            <option value="2" th:selected="${endHourString.equals('2')}">02:00</option>
+                            <option value="3" th:selected="${endHourString.equals('3')}">03:00</option>
+                            <option value="4" th:selected="${endHourString.equals('4')}">04:00</option>
+                            <option value="5" th:selected="${endHourString.equals('5')}">05:00</option>
+                            <option value="6" th:selected="${endHourString.equals('6')}">06:00</option>
+                            <option value="7" th:selected="${endHourString.equals('7')}">07:00</option>
+                            <option value="8" th:selected="${endHourString.equals('8')}">08:00</option>
+                            <option value="9" th:selected="${endHourString.equals('9')}">09:00</option>
+                            <option value="10" th:selected="${endHourString.equals('10')}">10:00</option>
+                            <option value="11" th:selected="${endHourString.equals('11')}">11:00</option>
+                            <option value="12" th:selected="${endHourString.equals('12')}">12:00</option>
+                            <option value="13" th:selected="${endHourString.equals('13')}">13:00</option>
+                            <option value="14" th:selected="${endHourString.equals('14')}">14:00</option>
+                            <option value="15" th:selected="${endHourString.equals('15')}">15:00</option>
+                            <option value="16" th:selected="${endHourString.equals('16')}">16:00</option>
+                            <option value="17" th:selected="${endHourString.equals('17')}">17:00</option>
+                            <option value="18" th:selected="${endHourString.equals('18')}">18:00</option>
+                            <option value="19" th:selected="${endHourString.equals('19')}">19:00</option>
+                            <option value="20" th:selected="${endHourString.equals('20')}">20:00</option>
+                            <option value="21" th:selected="${endHourString.equals('21')}">21:00</option>
+                            <option value="22" th:selected="${endHourString.equals('22')}">22:00</option>
+                            <option value="23" th:selected="${endHourString.equals('23')}">23:00</option>
+                            <option value="24" th:selected="${endHourString.equals('24')}">24:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2 ">
+                        <select class="form-control" name="tableType">
+                            <option value="fixed" th:selected="${tableType.equals('fixed')}">fixed tables</option>
+                            <option value="movable" th:selected="${tableType.equals('movable')}">movable tables</option>
+                            <option value="any" th:selected="${tableType.equals('any')}">any tables</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2 ">
+                        <select class="form-control" name="chairType">
+                            <option value="fixed" th:selected="${chairType.equals('fixed')}">fixed chairs</option>
+                            <option value="movable" th:selected="${chairType.equals('movable')}">movable chairs</option>
+                            <option value="any" th:selected="${chairType.equals('any')}">any chairs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2 ">
+                        <select class="form-control" name="liveStream">
+                            <option value="true" th:selected="${liveStream.equals('true')}">with livestream</option>
+                            <option value="false" th:selected="${liveStream.equals('false')}">no livestream
+                            </option>
+                            <option value="any" th:selected="${liveStream.equals('any')}">any livestream</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+<main th:include="${view}"></main>
+
+<div class="container">
+    <p style="color: red;" th:text="${errorMsg}"></p>
+</div>
+
+</body>
+<footer>
+    <div class="container modal-footer">
+        <p>&copy; 2018 - Demo Project</p>
+    </div>
+</footer>
+</html>
